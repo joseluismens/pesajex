@@ -20,7 +20,7 @@ const app: Application = express();
 // Settings
 app.set('port', process.env.PORT || 8080);
 
-app.use (express.static ("dist"));
+app.use(express.static(path.join(__dirname,'/dist')));
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 });
 // Routes
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'dist/index.html'));
+    res.sendFile(path.join(__dirname,'dist/index.html'))
 })
 app.use('/uploads', express.static(path.resolve('uploads')));
 app.use('/api', productoRoutes);
