@@ -20,7 +20,8 @@ const app: Application = express();
 // Settings
 app.set('port', process.env.PORT || 8080);
 
-app.use(express.static(path.join(__dirname,'dist')));
+app.use (express.static ("dist"));
+
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
