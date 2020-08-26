@@ -21,7 +21,6 @@ const app: Application = express();
 app.set('port', process.env.PORT || 8080);
 
 app.use (express.static ("dist"));
-
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
